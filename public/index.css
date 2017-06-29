@@ -1,0 +1,7 @@
+body{
+  margin: 0;
+  background: rebeccapurple;
+}
+.video_filter{
+  -webkit-filter: drop-shadow(16px 16px 20px black) grayscale(1);
+}
