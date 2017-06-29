@@ -1,12 +1,17 @@
 var express = require('express.io');
+fs = require('fs');
+options = {
+    key: fs.readFileSync('./key'),
+    cert: fs.readFileSync('./cert')
+};
 var app = express();
-app.http().io();
+app.https(options).io();
 var PORT = 80;
 console.log('server started on port:' , PORT);
 
 app.use(express.static(__dirname + '/public'));
 
-app.get('https://webrtcp2p.herokuapp.com/',(req, res) => {
+app.get('/',(req, res) => {
     res.render('index.ejs');
 });
 
