@@ -6,7 +6,7 @@ console.log('server started on port:' , PORT);
 
 app.use(express.static(__dirname + '/public'));
 
-app.get('webrtcp2p.herokuapp.com/',(req, res) => {
+app.get('https://webrtcp2p.herokuapp.com/',(req, res) => {
     res.render('index.ejs');
 });
 
