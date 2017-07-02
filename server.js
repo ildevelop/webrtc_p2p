@@ -8,13 +8,17 @@ var express = require('express.io');
 var app = express();
 // app.http().io();
 app.https(options).io()
-var PORT = 80;
-console.log('server started on port:' , PORT);
+var PORT = 5000;
+
 
 app.use(express.static(__dirname + '/public'));
 
+// views is directory for all template files
+app.set('views', __dirname + '/views');
+app.set('view engine', 'ejs');
+
 app.get('/',(req, res) => {
-    res.render('index.ejs');
+    res.render('index');
 });
 
 app.io.route('ready',(req) => {
@@ -39,4 +43,4 @@ app.io.route('signal',(req) => {
     message: req.data.message
 });
 })
-app.listen(PORT);
+app.listen(PORT, () => console.log('server started on port:' , PORT));
