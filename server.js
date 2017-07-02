@@ -8,7 +8,7 @@ var express = require('express.io');
 var app = express();
 // app.http().io();
 app.https(options).io()
-var PORT = 3000;
+var PORT = 80;
 console.log('server started on port:' , PORT);
 
 app.use(express.static(__dirname + '/public'));
