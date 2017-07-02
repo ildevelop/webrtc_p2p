@@ -33,7 +33,6 @@
 </div>
 </body>
 <script>
-
     //    VIDEO
     //    var videoSelect = document.querySelector('#camera');
     var profilePicCanvas = document.querySelector("#profilePicCanvas");
@@ -210,7 +209,7 @@
         // get a local stream, show it in a self-view and add it to be sent
         navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia;
         navigator.getUserMedia({
-            "audio": false,
+            "audio": true,
             "video": {
                 mandatory: {
                     minWidth: 240,
